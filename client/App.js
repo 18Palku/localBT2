@@ -4,6 +4,8 @@ import Status from './components/Status'
 import Input from './components/Input';
 
 export default function App() {
+
+  var palak = "sundar";
   return (
     // <View style={styles.container}>
     //   <Text>local bt</Text>
