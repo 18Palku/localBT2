@@ -1,33 +1,33 @@
-import { StatusBar } from 'react-native';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Status from './components/Status'
-import Input from './components/Input';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+//SCREENS
+import Home from "./screens/Home";
+import Details from "./screens/Details";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
 
-  var palak = "sundar";
   return (
-    // <View style={styles.container}>
-    //   <Text>local bt</Text>
-    //   <StatusBar style="auto" />
-    //   <Status/>
-    // </View>
-    <View>
-      <Status/>
-      <Input from="From" where="L"/>
-      <Input from ="To" where="R"/>
-      
-    </View>
-   
+
+    < NavigationContainer >
+      <Status />
+      <Stack.Navigator initialRouteName='Home' screenOptions={{ headerShown: false, animation: "slide_from_right", animationDuration: 1 }}>
+        <Stack.Screen
+          name='Home'
+          component={Home}
+        />
+        <Stack.Screen
+          name='Details'
+          component={Details}
+        />
+      </Stack.Navigator>
+    </NavigationContainer >
   );
 }
 
+const styles = StyleSheet.create({
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+});
