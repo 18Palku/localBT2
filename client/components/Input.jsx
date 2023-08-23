@@ -1,12 +1,17 @@
 import { View, TextInput, StyleSheet, Text, Image } from "react-native";
 import { useFonts } from "expo-font";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import * as SplashScreen from "expo-splash-screen";
 
 const Input = (props) => {
+
+    let [to, setTo] = useState("");
     const [fontsLoaded] = useFonts({
         "Roboto-Medium": require("../assets/fonts/Roboto-Medium.ttf"),
     });
+    if (props.childDataFetch) {
+        props.childDataFetch(to);
+    }
 
     useEffect(() => {
         async function prepare() {
@@ -20,20 +25,20 @@ const Input = (props) => {
         SplashScreen.hideAsync();
     }
 
-
     let styleView = null;
     (props.where === "L" ? styleView = styles.containerLeft : styleView = styles.containerRight);
     if (props.where === "L") {
         return (
             <View style={styleView}>
                 <Image source={require("../assets/house.png")} style={styles.imageLeft} />
-                <TextInput style={styles.input} placeholder={props.from} />
+                <TextInput style={styles.input} placeholder={props.from} value="Nalti" editable={false} />
             </View>
         )
     } else {
         return (
             <View style={styleView}>
-                <TextInput style={styles.input} placeholder={props.from} />
+                <TextInput style={styles.input} placeholder={props.from} onChangeText={setTo}
+                    value={to} />
                 <Image source={require("../assets/location.png")} style={styles.imageRight} />
             </View>
         )

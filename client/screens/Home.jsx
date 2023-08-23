@@ -1,19 +1,33 @@
-import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet, Vibration } from "react-native";
 import Input from '../components/Input';
 import TimePicker from '../components/TimePicker';
 import List from '../components/List';
+import { useState } from "react";
+
 const Home = ({ navigation }) => {
-    // console.log("navigation:-> ", navigation);
+    let [to, setTo] = useState("");
+    let [isOk, setIsOk] = useState(false);
+    const childDataFetch = (data) => {
+        setTo(data);
+    }
+
+    const search = () => {
+        Vibration.vibrate(10);
+        if (to.length) {
+            console.log("where are my buses");
+        }
+    }
+
     return (
         <View>
-            <Input from="From" where="L" />
-            <Input from="To" where="R" />
+            <Input from="From" where="L" childDataFetch={null} />
+            <Input from="To" where="R" childDataFetch={childDataFetch} />
             <TimePicker />
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity onPress={search} style={styles.btn}>
                 <Image style={styles.srhLogo} source={require("../assets/loupe.png")} />
                 <Text style={styles.btnText}>Find Buses</Text>
             </TouchableOpacity>
-            <List nav={navigation} />
+            <List to={to} nav={navigation} />
         </View>
     )
 }

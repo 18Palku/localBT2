@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native"
+import { View, Text, StyleSheet, Vibration, TouchableOpacity } from "react-native"
 import { useState } from 'react';
 import DateTimePicker from '@react-native-community/datetimepicker';
 const TimePicker = () => {
@@ -6,6 +6,7 @@ const TimePicker = () => {
     const [date, setDate] = useState(new Date(1598051700000));
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
+
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate;
         setShow(false);
@@ -18,6 +19,7 @@ const TimePicker = () => {
     };
 
     const showTimepicker = () => {
+        Vibration.vibrate(10);
         showMode('time');
     };
 
