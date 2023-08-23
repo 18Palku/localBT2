@@ -9,7 +9,6 @@ import Details from "./screens/Details";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const palak = "Bohot samajdaar";
 
   return (
     <NavigationContainer>
