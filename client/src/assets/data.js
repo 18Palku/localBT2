@@ -1,0 +1,36 @@
+const Buses = [];
+
+Buses[515] = "Shimla Govt.Bus";
+Buses[630] = "Swami Bus";
+Buses[730] = "Parmar Bus";
+Buses[755] = "Thakur Bus";
+Buses[800] = "Dhaneta Govt.Bus";
+Buses[820] = "Mehre Govt.Bus";
+Buses[840] = "RTC Bus";
+Buses[855] = "Vimal Bus";
+Buses[910] = "Dandru Govt.Bus";
+Buses[920] = "Dheneta Govt.Bus";
+Buses[950] = "Parmar Bus";
+Buses[1020] = "Parmar Bus";
+Buses[1035] = "Parmar Bus";
+Buses[1100] = "Parmar Bus";
+Buses[1115] = "Samtana Govt.Bus";
+Buses[1150] = "Parmar Bus";
+Buses[1220] = "Thakur Bus";
+Buses[1225] = "Ghagot Govt.Bus";
+Buses[1250] = "Ukhli Govt.Bus";
+Buses[1305] = "Dhaneta Govt.Bus";
+Buses[1335] = "RTC Bus";
+Buses[1420] = "Parmar Bus";
+Buses[1450] = "Vimal Govt.Bus";
+Buses[1515] = "Matoh Govt.Bus";
+Buses[1545] = "Parmar Bus";
+Buses[1615] = "Parmar Bus";
+Buses[1630] = "Thakur Bus";
+Buses[1705] = "RTC Parmar Bus";
+Buses[1730] = "RTC Bus";
+Buses[1740] = "Govt.Bus";
+Buses[1820] = "Jalandhar Govt.Bus";
+Buses[1925] = "Chandigarh Govt.Bus";
+
+export { Buses };
